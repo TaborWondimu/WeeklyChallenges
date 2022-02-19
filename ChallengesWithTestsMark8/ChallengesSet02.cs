@@ -61,21 +61,15 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-                if (numbers.Count() == 0)
-                {
-                return 0.0;
-                }
-                if (numbers == null)
-                {
-                 return 0.0; 
-                }
-                else
-                {
-                    return numbers.Max() + numbers.Min();
-                }
-            
-
-                throw new NotImplementedException();
+               if (numbers == null || numbers.Count() == 0)
+            {
+                return 0;
+            }
+               else
+            {
+                return numbers.Min() + numbers.Max();
+            }
+          throw new NotImplementedException();
             
         }
 
@@ -98,15 +92,17 @@ namespace ChallengesWithTestsMark8
 
         public int Sum(int[] numbers)
         {
-          
             if (numbers == null)
             {
                 return 0;
             }
-            else
+            int sum = 0;
+           foreach (int num in numbers)
             {
-                return numbers.Sum();
+                sum += num;
             }
+            return sum;
+
             throw new NotImplementedException();
         }
 
@@ -116,51 +112,49 @@ namespace ChallengesWithTestsMark8
             {
                 return 0;
             }
-              var Sum = 0;
+              var sum = 0;
             for (int i = 0; i < numbers.Length; i++)
             {
                 if (numbers[i] % 2 == 0)
                 {
-                    Sum += numbers[i];  
+                    sum += numbers[i];  
                 }
                 }
-              return Sum;
+              return sum;
             
             throw new NotImplementedException();
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
+            
             if (numbers == null)
-            {
-                return false;
-            }
-            if (numbers.Sum() % 2 != 0)
+            return false;
+            int sum = numbers.Sum();
+            if (sum % 2 != 0)
             {
                 return true;
             }
-            else if (numbers.Sum() % 2 == 0)
+            else
             {
                 return false;
             }
-             
-            throw new NotImplementedException();
+               
+           throw new NotImplementedException();
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
-        {  
-            if ( number < 0)
+        {
+            if (number <= 0)
             {
                 return 0;
             }
-            if (number <= 0)
+            else 
             {
-                return number;
+              return number / 2;
             }
-            else
-            {
-                return number / 2;
-            }
+
+          
             throw new NotImplementedException();
         }
     }
