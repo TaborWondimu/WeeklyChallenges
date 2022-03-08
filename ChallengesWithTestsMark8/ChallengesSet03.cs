@@ -50,6 +50,11 @@ namespace ChallengesWithTestsMark8
            bool caseUpper = false;
            bool isNumber = false;
 
+            
+
+
+
+
             for (int i = 0; i < password.Length; i++)
             {
                 if (char.IsLower(password[i]))
